@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --doaide-bg: #0A0A0B;
+  --doaide-bg-alt: #111113;
+  --doaide-surface: #1A1A1D;
+  --doaide-surface-hover: #222225;
+  --doaide-border: #2A2A2D;
+  --doaide-border-light: #333336;
+  --doaide-gold: #F0B429;
+  --doaide-gold-hover: #D4A017;
+  --doaide-gold-light: #F7CC5F;
+  --doaide-gold-dim: #8B6914;
+  --doaide-gold-bg: rgba(240, 180, 41, 0.1);
+  --doaide-text: #E5E7EB;
+  --doaide-text-secondary: #9CA3AF;
+  --doaide-text-muted: #6B7280;
+  --doaide-text-on-gold: #0A0A0B;
+  --doaide-success: #34D399;
+  --doaide-error: #F87171;
+  --doaide-warning: #FBBF24;
+  --doaide-info: #60A5FA;
+  --doaide-font: 'Schibsted Grotesk', system-ui, -apple-system, sans-serif;
+  --doaide-font-display: 'Instrument Serif', Georgia, serif;
+  --doaide-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  --doaide-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --doaide-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --doaide-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --doaide-shadow-gold: 0 0 20px rgba(240, 180, 41, 0.15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--doaide-bg);
+  color: var(--doaide-text);
+  font-family: var(--doaide-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--doaide-gold);
+  color: var(--doaide-text-on-gold);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--doaide-bg); }
+::-webkit-scrollbar-thumb { background: var(--doaide-border); border-radius: 4px; }
