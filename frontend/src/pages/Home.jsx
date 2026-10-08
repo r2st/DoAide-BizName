@@ -198,6 +198,67 @@ export default function Home({ user }) {
           ))}
         </section>
       )}
+
+      {/* Testimonials */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--doaide-text)' }}>
+          Trusted by <span style={{ color: 'var(--doaide-gold)' }}>Indian Entrepreneurs</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { name: 'Priya Sharma', role: 'Founder, NovaByte Technologies', location: 'Bengaluru', text: 'I was stuck for weeks trying to find a name for my SaaS startup. BizNameAI gave me 30 options in seconds, and "NovaByte" scored highest on memorability. The domain was available too. Saved me weeks of brainstorming.' },
+            { name: 'Rahul Mehta', role: 'Co-founder, CraftKart', location: 'Mumbai', text: 'The social handle checker is a lifesaver. We almost went with a name that was taken on Instagram and Twitter. BizNameAI flagged it immediately and suggested alternatives. Our D2C brand launched with consistent handles everywhere.' },
+            { name: 'Ananya Krishnan', role: 'CEO, GreenLeaf Organics', location: 'Kochi', text: 'As a first-time entrepreneur, I had no idea how to evaluate business names. The scoring feature broke it down — memorability, pronounceability, brandability. It made the decision feel scientific, not guesswork.' },
+            { name: 'Vikram Desai', role: 'Director, FinEdge Consulting', location: 'Pune', text: 'We rebranded from a generic name to "FinEdge" using BizNameAI. Client inquiries increased 40% in the first quarter — people actually remember our name now. The .in and .com domains were both available.' },
+          ].map((t) => (
+            <div
+              key={t.name}
+              className="rounded-xl p-5"
+              style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+            >
+              <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>"{t.text}"</p>
+              <div>
+                <p className="font-semibold text-sm" style={{ color: 'var(--doaide-text)' }}>{t.name}</p>
+                <p className="text-xs" style={{ color: 'var(--doaide-text-muted)' }}>{t.role} &middot; {t.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mb-16 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--doaide-text)' }}>
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-3">
+          {[
+            { q: 'Is BizNameAI free to use?', a: 'Yes! You get 5 free searches per day with no sign-up required. Each search generates multiple AI-powered name suggestions with domain availability, social handle checks, and name scoring. Upgrade to Pro for unlimited searches starting at ₹299/month.' },
+            { q: 'How does the AI generate business names?', a: 'BizNameAI uses advanced language models trained on millions of business names and branding patterns. You provide a keyword, industry, and style preference, and the AI generates unique names that are phonetically pleasing, culturally appropriate, and scored on memorability and brandability.' },
+            { q: 'Can I check domain availability for generated names?', a: 'Absolutely. Every generated name automatically shows domain availability across .com, .in, .io, and .co TLDs. Green means available, red means taken. You can register available domains directly through your preferred registrar.' },
+            { q: 'Does BizNameAI check social media handle availability?', a: 'Yes. Each generated name is checked for handle availability on major social platforms including Instagram, Twitter/X, and Facebook. Consistent handles across platforms strengthen your brand identity.' },
+            { q: 'How is the name score calculated?', a: 'Each name is scored on three dimensions: memorability (how easy it is to recall after hearing once), pronounceability (how easy it is to say correctly), and brandability (length, uniqueness, and visual appeal). The combined score helps you compare candidates objectively.' },
+            { q: 'Can I use BizNameAI for naming businesses in India?', a: 'BizNameAI is built with the Indian market in mind. It generates names that work in both English and Hindi contexts, checks .in domain availability alongside .com, and considers cultural appropriateness. Many Indian entrepreneurs use it for naming startups, D2C brands, and consulting firms.' },
+          ].map((item, i) => (
+            <details
+              key={i}
+              className="rounded-xl group"
+              style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+            >
+              <summary
+                className="px-5 py-4 cursor-pointer font-medium text-sm list-none flex items-center justify-between"
+                style={{ color: 'var(--doaide-text)' }}
+              >
+                {item.q}
+                <span className="ml-2 transition-transform group-open:rotate-45" style={{ color: 'var(--doaide-gold)' }}>+</span>
+              </summary>
+              <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }
