@@ -18,6 +18,9 @@ export default function Navbar({ user, onLogout }) {
         </Link>
 
         <div className="flex items-center gap-4">
+          <Link to="/tools" className="text-sm hover:text-[var(--doaide-gold-light)]" style={{ color: 'var(--doaide-text-secondary)' }}>
+            Tools
+          </Link>
           <Link to="/pricing" className="text-sm hover:text-[var(--doaide-gold-light)]" style={{ color: 'var(--doaide-text-secondary)' }}>
             Pricing
           </Link>

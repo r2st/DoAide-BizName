@@ -14,6 +14,7 @@ import ToolsIndex from './pages/tools/ToolsIndex'
 import TaglineGenerator from './pages/tools/TaglineGenerator'
 import BrandNameScorer from './pages/tools/BrandNameScorer'
 import DomainChecker from './pages/tools/DomainChecker'
+import TrademarkClassFinder from './pages/tools/TrademarkClassFinder'
 import Embed from './pages/Embed'
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/tools/tagline-generator" element={<TaglineGenerator />} />
           <Route path="/tools/brand-name-scorer" element={<BrandNameScorer />} />
           <Route path="/tools/domain-checker" element={<DomainChecker />} />
+          <Route path="/tools/trademark-class-finder" element={<TrademarkClassFinder />} />
           <Route path="/embed" element={<Embed />} />
         </Routes>
       </main>

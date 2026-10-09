@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import NameCard from '../components/NameCard'
 import { generateNames, saveName } from '../lib/api'
 
@@ -198,6 +199,30 @@ export default function Home({ user }) {
           ))}
         </section>
       )}
+
+      {/* Free Tools CTA */}
+      <section className="mb-16">
+        <div
+          className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+        >
+          <div>
+            <h3 className="font-bold mb-1" style={{ color: 'var(--doaide-text)' }}>
+              Registering a Trademark?
+            </h3>
+            <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+              Find the right Nice Classification class for your brand with our free Trademark Class Finder.
+            </p>
+          </div>
+          <Link
+            to="/tools/trademark-class-finder"
+            className="shrink-0 rounded-lg px-5 py-2.5 text-sm font-medium no-underline"
+            style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+          >
+            Find Your Class
+          </Link>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="mb-16">
