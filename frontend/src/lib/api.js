@@ -68,6 +68,13 @@ export async function getPricing() {
   return request('/api/pricing')
 }
 
+export async function submitFeedback(type, message, page) {
+  return request('/api/feedback', {
+    method: 'POST',
+    body: JSON.stringify({ type, message, page }),
+  })
+}
+
 export function logout() {
   localStorage.removeItem('bizname_token')
 }

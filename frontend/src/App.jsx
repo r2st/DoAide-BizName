@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import FeedbackWidget from './components/FeedbackWidget'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { getMe, logout } from './lib/api'
@@ -57,6 +58,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <FeedbackWidget />
     </div>
   )
 }
