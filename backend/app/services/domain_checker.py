@@ -6,7 +6,7 @@ import socket
 
 logger = logging.getLogger(__name__)
 
-TLDS = [".com", ".in", ".io", ".co"]
+TLDS = [".com", ".in", ".co.in", ".io", ".co"]
 
 
 async def check_domain(name: str, tld: str) -> dict:
@@ -24,6 +24,7 @@ async def check_domain(name: str, tld: str) -> dict:
         return {"domain": domain, "available": None, "error": "Check failed"}
 
 
-async def check_all_domains(name: str) -> list[dict]:
-    tasks = [check_domain(name, tld) for tld in TLDS]
+async def check_all_domains(name: str, tlds: list[str] | None = None) -> list[dict]:
+    use_tlds = tlds if tlds is not None else TLDS
+    tasks = [check_domain(name, tld) for tld in use_tlds]
     return await asyncio.gather(*tasks)

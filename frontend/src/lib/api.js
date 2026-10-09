@@ -75,6 +75,20 @@ export async function submitFeedback(type, message, page) {
   })
 }
 
+export async function checkDomains(name) {
+  return request('/api/domain/check', {
+    method: 'POST',
+    body: JSON.stringify({ name }),
+  })
+}
+
+export async function searchTrademark(name, industry = '') {
+  return request('/api/trademark/search', {
+    method: 'POST',
+    body: JSON.stringify({ name, industry }),
+  })
+}
+
 export function logout() {
   localStorage.removeItem('bizname_token')
 }

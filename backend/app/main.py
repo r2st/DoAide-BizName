@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
 from app.core.config import settings
-from app.routers import auth, feedback, generate, saved
+from app.routers import auth, domain, feedback, generate, saved, trademark
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +31,8 @@ app.include_router(generate.router)
 app.include_router(auth.router)
 app.include_router(saved.router)
 app.include_router(feedback.router)
+app.include_router(domain.router)
+app.include_router(trademark.router)
 
 
 @app.get("/health")

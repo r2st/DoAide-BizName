@@ -200,8 +200,50 @@ export default function Home({ user }) {
         </section>
       )}
 
-      {/* Free Tools CTA */}
-      <section className="mb-16">
+      {/* Industry Generators */}
+      {!results && (
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'var(--doaide-text)' }}>
+            Industry-Specific <span style={{ color: 'var(--doaide-gold)' }}>Name Generators</span>
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { slug: 'technology', label: 'Technology', icon: '💻' },
+              { slug: 'food', label: 'Food & Beverage', icon: '🍕' },
+              { slug: 'fashion', label: 'Fashion', icon: '👗' },
+              { slug: 'healthcare', label: 'Healthcare', icon: '🏥' },
+            ].map(g => (
+              <Link key={g.slug} to={`/industry/${g.slug}`} className="rounded-xl p-5 text-center no-underline transition-colors" style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}>
+                <div className="text-3xl mb-2">{g.icon}</div>
+                <div className="text-sm font-semibold" style={{ color: 'var(--doaide-text)' }}>{g.label}</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Free Tools CTAs */}
+      <section className="mb-16 space-y-3">
+        <div
+          className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+        >
+          <div>
+            <h3 className="font-bold mb-1" style={{ color: 'var(--doaide-text)' }}>
+              Check Domain Availability
+            </h3>
+            <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+              Free DNS-based checker for .com, .in, and .co.in domains. No login required.
+            </p>
+          </div>
+          <Link
+            to="/tools/domain-checker"
+            className="shrink-0 rounded-lg px-5 py-2.5 text-sm font-medium no-underline"
+            style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+          >
+            Check Domains
+          </Link>
+        </div>
         <div
           className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
@@ -211,15 +253,15 @@ export default function Home({ user }) {
               Registering a Trademark?
             </h3>
             <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
-              Find the right Nice Classification class for your brand with our free Trademark Class Finder.
+              Search your name against Indian trademark classes and find the right Nice Classification.
             </p>
           </div>
           <Link
-            to="/tools/trademark-class-finder"
+            to="/tools/trademark-search"
             className="shrink-0 rounded-lg px-5 py-2.5 text-sm font-medium no-underline"
             style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
           >
-            Find Your Class
+            Search Trademarks
           </Link>
         </div>
       </section>

@@ -1,11 +1,19 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function PublicLayout({ title, jsonLd, children }) {
+export default function PublicLayout({ title, description, jsonLd, children }) {
   useEffect(() => {
     if (title) document.title = `${title} | BizNameAI`
     return () => { document.title = 'BizNameAI' }
   }, [title])
+
+  useEffect(() => {
+    if (!description) return
+    let meta = document.querySelector('meta[name="description"]')
+    const original = meta?.getAttribute('content') || ''
+    if (meta) meta.setAttribute('content', description)
+    return () => { if (meta) meta.setAttribute('content', original) }
+  }, [description])
 
   useEffect(() => {
     if (!jsonLd) return

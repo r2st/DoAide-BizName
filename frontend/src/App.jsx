@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { getMe, logout } from './lib/api'
 import Home from './pages/Home'
+import IndustryGenerator from './pages/IndustryGenerator'
 import Login from './pages/Login'
 import NameDetail from './pages/NameDetail'
 import Pricing from './pages/Pricing'
@@ -16,6 +17,7 @@ import TaglineGenerator from './pages/tools/TaglineGenerator'
 import BrandNameScorer from './pages/tools/BrandNameScorer'
 import DomainChecker from './pages/tools/DomainChecker'
 import TrademarkClassFinder from './pages/tools/TrademarkClassFinder'
+import TrademarkSearch from './pages/tools/TrademarkSearch'
 import Embed from './pages/Embed'
 
 export default function App() {
@@ -54,6 +56,8 @@ export default function App() {
           <Route path="/tools/brand-name-scorer" element={<BrandNameScorer />} />
           <Route path="/tools/domain-checker" element={<DomainChecker />} />
           <Route path="/tools/trademark-class-finder" element={<TrademarkClassFinder />} />
+          <Route path="/tools/trademark-search" element={<TrademarkSearch />} />
+          <Route path="/industry/:industry" element={<IndustryGenerator user={user} />} />
           <Route path="/embed" element={<Embed />} />
         </Routes>
       </main>
